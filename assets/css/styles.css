@@ -850,13 +850,13 @@ img {
   padding: 2rem 0 3rem;
 }
 .footer__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--h2-font-size);
   margin-bottom: var(--mb-0-25);
 }
 
 .footer__subtitle {
   font-size: var(--small-font-size);
-}
+} 
 .footer__links {
   display: flex;
   flex-direction: column;
