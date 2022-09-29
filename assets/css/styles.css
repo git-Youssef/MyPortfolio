@@ -6,7 +6,7 @@
   --header-height: 3rem;
 
   /*========== Colors ==========*/
-  /* Change favorite color */ 
+  /* Change favorite color */
   --hue-color: 200;
   /*Purple 250 - Green 142 - Blue 230 - Pink 340*/
 
@@ -574,8 +574,7 @@ img {
 }
 /*==================== SERVICES ====================*/
 .services__container {
-  gap: 1.5rem;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }
 .services__content {
   position: relative;
@@ -599,7 +598,7 @@ img {
 }
 .services__icon {
   display: block;
-  font: 1.5rem;
+  font-size: 1.5rem;
   color: var(--first-color);
   margin-bottom: var(--mb-1);
 }
@@ -856,7 +855,7 @@ img {
 
 .footer__subtitle {
   font-size: var(--small-font-size);
-} 
+}
 .footer__links {
   display: flex;
   flex-direction: column;
@@ -972,11 +971,6 @@ img {
 
   .qualification__data {
     gap: 0.5rem;
-  }
-
-  .services__container {
-    grid-template-columns: max-content;
-    justify-content: center;
   }
 
   .services__content {
@@ -1104,10 +1098,6 @@ img {
     grid-template-columns: 0.5fr;
   }
 
-  .services__container {
-    grid-template-columns: repeat(3, 218px);
-    justify-content: center;
-  }
   .services__icon {
     font-size: 2rem;
   }
@@ -1161,9 +1151,6 @@ img {
     -moz-transform: translateX(-6rem);
     -ms-transform: translateX(-6rem);
     -o-transform: translateX(-6rem);
-  }
-  .services__container {
-    grid-template-columns: repeat(3, 238px);
   }
 
   .portfolio__content {
