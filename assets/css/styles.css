@@ -143,6 +143,26 @@ img {
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
   padding: 2rem 0 4rem;
+  opacity: 0;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s; 
+  -o-transition: 1s;
+  transform: translateY(3rem);
+  -webkit-transform: translateY(3rem);
+  -moz-transform: translateY(3rem);
+  -ms-transform: translateY(3rem);
+  -o-transform: translateY(3rem);
+}
+
+.fadeInTop{
+  opacity: 1;
+  transform: translateY(0);
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
 }
 
 .section__title {
@@ -160,6 +180,7 @@ img {
 .section__subtitle {
   text-align: center;
 }
+
 
 /*==================== LAYOUT ====================*/
 .container {
@@ -182,6 +203,36 @@ img {
   background-color: var(--body-color);
 }
 
+/*==================== PRELOADER ====================*/
+
+.preloader__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+}
+.preloader__content {
+  text-align: center;
+}
+.preloader__content img {
+  height: 70px;
+  width: 70px;
+  margin-bottom: var(--mb-0-75);
+  animation-name: loader;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.preloader__content span {
+  font-size: 1.2rem;
+  display: block;
+}
 /*==================== NAV ====================*/
 
 .nav {
@@ -332,10 +383,6 @@ img {
 
 .home__description {
   margin-bottom: var(--mb-2);
-}
-
-.home__scroll {
-  /* display: none; */
 }
 
 .home__scroll-button {
@@ -1170,5 +1217,15 @@ img {
   }
   .contact__form {
     width: 460px;
+  }
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
   }
 }

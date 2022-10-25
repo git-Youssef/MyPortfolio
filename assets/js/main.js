@@ -1,3 +1,14 @@
+/*==================== PRELOADE ====================*/
+
+const preloaderContainer = document.querySelector(".preloader__container");
+
+window.scrollTo(0, 0);
+
+window.onload = function () {
+    preloaderContainer.style.display = "none";
+    document.querySelector(".home").classList.add("fadeInTop");
+}
+
 /*==================== MENU SHOW Y HIDDEN ====================*/
 const navMenu = document.getElementById("nav-menu"),
     navToggle = document.getElementById("nav-toggle"),
@@ -88,14 +99,14 @@ let swiper = new Swiper(".portfolio__container", {
     },
     pagination: {
         el: ".swiper-pagination",
-        clickable: true, 
+        clickable: true,
     },
     // mousewheel: false,
     keyboard: false,
-    allowTouchMove: false ,
+    allowTouchMove: false,
     mousewheel: {
         invert: false,
-      },
+    },
 });
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
@@ -109,10 +120,10 @@ function scrollActive() {
     sections.forEach(currentSec => {
 
         const sectionHeight = currentSec.offsetHeight;
-        const sectionTop = currentSec.offsetTop;
+        const sectionOffsetTop = currentSec.offsetTop;
         const sectionId = currentSec.id;
 
-        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        if (scrollY > sectionOffsetTop && scrollY <= sectionOffsetTop + sectionHeight) {
             document.querySelector(`.nav__menu a[href*=${sectionId}]`).classList.add('active-link');
 
         } else {
@@ -138,11 +149,31 @@ function scrollUp() {
 }
 window.addEventListener('scroll', scrollUp)
 
+/*==================== Add FadeInTop Class when section shows up ====================*/
+
+const allSections = document.querySelectorAll('section:not(.home)');
+
+function addFadeClase() {
+
+    const scrollY = window.pageYOffset;
+
+    allSections.forEach(currentSec => {
+
+        const sectionHeight = currentSec.offsetHeight;
+        const sectionOffsetTop = currentSec.offsetTop;
+ 
+        if (scrollY >= sectionOffsetTop - sectionHeight + 100) {
+  
+            currentSec.classList.add("fadeInTop");
+
+        } 
+    })
+}
+
+window.addEventListener('scroll', addFadeClase);
 
 /*==================== DARK LIGHT THEME ====================*/
 const themeButton = document.getElementById('theme-button')
-// const darkTheme = 'dark-theme';
-// const iconTheme = 'uil-sun';
 
 // Previously selected topic (if user selected)
 const selectedTheme = localStorage.getItem('selected-theme')
