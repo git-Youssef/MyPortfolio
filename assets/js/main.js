@@ -88,26 +88,6 @@ modalCloses.forEach((mdClose, i) => {
     })
 });
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-
-let swiper = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-    },
-    pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-    },
-    // mousewheel: false,
-    keyboard: false,
-    allowTouchMove: false,
-    mousewheel: {
-        invert: false,
-    },
-});
 
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 

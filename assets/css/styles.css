@@ -735,8 +735,8 @@ img {
 /*==================== PORTFOLIO ====================*/
 
 .portfolio__container {
-  overflow: initial;
-  position: relative;
+  display: grid;
+  row-gap: 2rem;
 }
 
 .portfolio__content {
@@ -1154,13 +1154,6 @@ img {
 
   .services__modal-content {
     width: 450px;
-  }
-
-  /* .portfolio__img {
-    width: 320px;
-  } */
-  .portfolio__content {
-    align-items: center;
   }
 
   .footer__container {
